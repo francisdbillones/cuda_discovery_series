@@ -1,0 +1,23 @@
+# Build outputs
+*.o
+*.obj
+*.out
+*.exe
+*.a
+*.so
+*.ptx
+*.cubin
+*.fatbin
+build/
+bin/
+
+# Profiling
+*.nsys-rep
+*.ncu-rep
+*.qdrep
+*.sqlite
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
