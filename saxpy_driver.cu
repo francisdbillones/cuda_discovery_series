@@ -58,7 +58,7 @@ void verify_result(const int* x, const int* y, const int* out, const int a, cons
 				i,
 				a * x[i] + y[i],
 				out[i]
-			)
+			);
 		}
 	}
 
