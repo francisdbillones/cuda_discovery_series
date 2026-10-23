@@ -7,6 +7,13 @@ void init_data(int* x, int* y, int n);
 void verify_result(const int* x, const int* y, const int* out, const int a, const int n);
 
 
+int main() {
+	benchmark_n(1 << 24);
+	benchmark_n(1 << 26);
+	benchmark_n(1 << 28);
+}
+
+
 void benchmark_n(const int n){
 	const size_t bytes = n * sizeof(int);
 
@@ -15,7 +22,7 @@ void benchmark_n(const int n){
 	cudaMallocManaged(&y, bytes);
 	cudaMallocManaged(&out, bytes);
 
-	init_data(x, y);
+	init_data(x, y, n);
 
 	const int threads = 256;
 	const int blocks = (n + threads - 1) / threads;
