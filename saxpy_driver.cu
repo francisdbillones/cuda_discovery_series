@@ -2,7 +2,7 @@
 #include <cuda_runtime.h>
 
 
-#define a 256
+#define A 256
 
 
 __global__ void saxpy(const int* x, const int* y, const int* out, const int a, const int N);
@@ -31,11 +31,11 @@ void benchmark_n(const int n){
 	const int threads = 256;
 	const int blocks = (n + threads - 1) / threads;
 
-	saxpy<<<blocks, threads>>>(x, y, out, a, n);
+	saxpy<<<blocks, threads>>>(x, y, out, A, n);
 
 	cudaDeviceSynchronize();
 
-	verify_result(x, y, out, n);
+	verify_result(x, y, out, A, n);
 
 	cudaFree(x);
 	cudaFree(y);
