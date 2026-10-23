@@ -3,6 +3,7 @@
 
 
 __global__ void saxpy(const int* x, const int* y, const int* out, const int a, const int N);
+void benchmark_n(const int n);
 void init_data(int* x, int* y, int n);
 void verify_result(const int* x, const int* y, const int* out, const int a, const int n);
 
